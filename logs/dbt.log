@@ -1,0 +1,1102 @@
+[0m13:44:40.113830 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2decf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d80f4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d80f750>]}
+
+
+============================== 13:44:40.119193 | ef74f0f6-4844-46b4-b034-5df7054069e1 ==============================
+[0m13:44:40.119193 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:44:40.119635 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'log_path': '/Users/p/woodfrog/antvia/dbt_demo/logs', 'debug': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'use_colors': 'True', 'warn_error': 'None', 'version_check': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'static_parser': 'True', 'introspect': 'True', 'profiles_dir': '/Users/p/woodfrog/antvia/dbt_demo/.dbt', 'printer_width': '80', 'quiet': 'False', 'log_format': 'default', 'empty': 'None', 'fail_fast': 'False', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt seed', 'send_anonymous_usage_stats': 'True', 'no_print': 'None'}
+[0m13:44:40.927445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb589d0>]}
+[0m13:44:40.952793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b723350>]}
+[0m13:44:40.953743 [info ] [MainThread]: Registered adapter: duckdb=1.9.0
+[0m13:44:40.990850 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m13:44:40.991378 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:44:40.991720 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d976850>]}
+[0m13:44:41.500901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de03020>]}
+[0m13:44:41.533087 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/p/woodfrog/antvia/dbt_demo/target/manifest.json
+[0m13:44:41.534309 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/p/woodfrog/antvia/dbt_demo/target/semantic_manifest.json
+[0m13:44:41.540168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e369fd0>]}
+[0m13:44:41.540522 [info ] [MainThread]: Found 6 models, 3 seeds, 5 data tests, 456 macros
+[0m13:44:41.540851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10de142c0>]}
+[0m13:44:41.541860 [info ] [MainThread]: 
+[0m13:44:41.542246 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:44:41.542556 [info ] [MainThread]: 
+[0m13:44:41.542945 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:44:41.544747 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo'
+[0m13:44:41.571576 [debug] [ThreadPool]: Using duckdb connection "list_demo"
+[0m13:44:41.574080 [debug] [ThreadPool]: On list_demo: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"demo"'
+    
+  
+  
+[0m13:44:41.577892 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:41.584685 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m13:44:41.585574 [debug] [ThreadPool]: On list_demo: Close
+[0m13:44:41.586401 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo, now create_demo_analytics_bronze)
+[0m13:44:41.586831 [debug] [ThreadPool]: Creating schema "database: "demo"
+schema: "analytics_bronze"
+"
+[0m13:44:41.589243 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:41.589541 [debug] [ThreadPool]: On create_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "create_demo_analytics_bronze"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='demo'
+        and type='sqlite'
+    
+  
+[0m13:44:41.589809 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:41.593524 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:41.594359 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:41.594638 [debug] [ThreadPool]: On create_demo_analytics_bronze: BEGIN
+[0m13:44:41.594957 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:44:41.595225 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:41.595485 [debug] [ThreadPool]: On create_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "create_demo_analytics_bronze"} */
+
+    
+    
+        create schema if not exists "demo"."analytics_bronze"
+    
+[0m13:44:41.595810 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:44:41.596319 [debug] [ThreadPool]: On create_demo_analytics_bronze: COMMIT
+[0m13:44:41.596600 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:41.596870 [debug] [ThreadPool]: On create_demo_analytics_bronze: COMMIT
+[0m13:44:41.597329 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m13:44:41.597599 [debug] [ThreadPool]: On create_demo_analytics_bronze: Close
+[0m13:44:41.598953 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_demo_analytics_bronze, now list_demo_analytics_bronze)
+[0m13:44:41.600867 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_bronze"
+[0m13:44:41.601469 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo_analytics_silver'
+[0m13:44:41.601742 [debug] [ThreadPool]: On list_demo_analytics_bronze: BEGIN
+[0m13:44:41.602432 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_silver"
+[0m13:44:41.602715 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:41.602990 [debug] [ThreadPool]: On list_demo_analytics_silver: BEGIN
+[0m13:44:41.603290 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:41.606513 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:41.606823 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_bronze"
+[0m13:44:41.607106 [debug] [ThreadPool]: On list_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo_analytics_bronze"} */
+select
+      'demo' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics_bronze'
+    and lower(table_catalog) = 'demo'
+  
+[0m13:44:41.607381 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:41.607705 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_silver"
+[0m13:44:41.607994 [debug] [ThreadPool]: On list_demo_analytics_silver: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo_analytics_silver"} */
+select
+      'demo' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics_silver'
+    and lower(table_catalog) = 'demo'
+  
+[0m13:44:41.608811 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:41.609123 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:41.609807 [debug] [ThreadPool]: On list_demo_analytics_bronze: ROLLBACK
+[0m13:44:41.610508 [debug] [ThreadPool]: On list_demo_analytics_silver: ROLLBACK
+[0m13:44:41.611353 [debug] [ThreadPool]: Failed to rollback 'list_demo_analytics_bronze'
+[0m13:44:41.611719 [debug] [ThreadPool]: Failed to rollback 'list_demo_analytics_silver'
+[0m13:44:41.611998 [debug] [ThreadPool]: On list_demo_analytics_bronze: Close
+[0m13:44:41.612271 [debug] [ThreadPool]: On list_demo_analytics_silver: Close
+[0m13:44:41.613046 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e35a810>]}
+[0m13:44:41.613387 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:41.613653 [debug] [MainThread]: On master: BEGIN
+[0m13:44:41.613915 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:44:41.617331 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m13:44:41.617726 [debug] [MainThread]: On master: COMMIT
+[0m13:44:41.618020 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:41.618288 [debug] [MainThread]: On master: COMMIT
+[0m13:44:41.618611 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:44:41.618916 [debug] [MainThread]: On master: Close
+[0m13:44:41.620630 [debug] [Thread-1 (]: Began running node seed.dbt_demo.bronze_customers
+[0m13:44:41.620981 [debug] [Thread-2 (]: Began running node seed.dbt_demo.bronze_orders
+[0m13:44:41.621573 [debug] [Thread-3 (]: Began running node seed.dbt_demo.bronze_products
+[0m13:44:41.621380 [info ] [Thread-1 (]: 1 of 3 START seed file analytics_bronze.bronze_customers ....................... [RUN]
+[0m13:44:41.622094 [info ] [Thread-2 (]: 2 of 3 START seed file analytics_bronze.bronze_orders .......................... [RUN]
+[0m13:44:41.622503 [info ] [Thread-3 (]: 3 of 3 START seed file analytics_bronze.bronze_products ........................ [RUN]
+[0m13:44:41.622887 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_demo_analytics_bronze, now seed.dbt_demo.bronze_customers)
+[0m13:44:41.623220 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_demo_analytics_silver, now seed.dbt_demo.bronze_orders)
+[0m13:44:41.623542 [debug] [Thread-3 (]: Acquiring new duckdb connection 'seed.dbt_demo.bronze_products'
+[0m13:44:41.623835 [debug] [Thread-1 (]: Began compiling node seed.dbt_demo.bronze_customers
+[0m13:44:41.624118 [debug] [Thread-2 (]: Began compiling node seed.dbt_demo.bronze_orders
+[0m13:44:41.624403 [debug] [Thread-3 (]: Began compiling node seed.dbt_demo.bronze_products
+[0m13:44:41.624694 [debug] [Thread-1 (]: Began executing node seed.dbt_demo.bronze_customers
+[0m13:44:41.624982 [debug] [Thread-2 (]: Began executing node seed.dbt_demo.bronze_orders
+[0m13:44:41.625262 [debug] [Thread-3 (]: Began executing node seed.dbt_demo.bronze_products
+[0m13:44:41.635679 [debug] [Thread-1 (]: Using duckdb connection "seed.dbt_demo.bronze_customers"
+[0m13:44:41.636417 [debug] [Thread-2 (]: Using duckdb connection "seed.dbt_demo.bronze_orders"
+[0m13:44:41.637715 [debug] [Thread-1 (]: On seed.dbt_demo.bronze_customers: BEGIN
+[0m13:44:41.638384 [debug] [Thread-3 (]: Using duckdb connection "seed.dbt_demo.bronze_products"
+[0m13:44:41.638685 [debug] [Thread-2 (]: On seed.dbt_demo.bronze_orders: BEGIN
+[0m13:44:41.639012 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:41.639304 [debug] [Thread-3 (]: On seed.dbt_demo.bronze_products: BEGIN
+[0m13:44:41.639597 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:44:41.639924 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:44:41.643392 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:44:41.643704 [debug] [Thread-1 (]: Using duckdb connection "seed.dbt_demo.bronze_customers"
+[0m13:44:41.643992 [debug] [Thread-1 (]: On seed.dbt_demo.bronze_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "seed.dbt_demo.bronze_customers"} */
+
+    create table "demo"."analytics_bronze"."bronze_customers" (customer_id integer,customer_name text,customer_tier text)
+  
+[0m13:44:41.644319 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m13:44:41.644647 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m13:44:41.644930 [debug] [Thread-2 (]: Using duckdb connection "seed.dbt_demo.bronze_orders"
+[0m13:44:41.645211 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:44:41.645488 [debug] [Thread-3 (]: Using duckdb connection "seed.dbt_demo.bronze_products"
+[0m13:44:41.645768 [debug] [Thread-2 (]: On seed.dbt_demo.bronze_orders: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "seed.dbt_demo.bronze_orders"} */
+
+    create table "demo"."analytics_bronze"."bronze_orders" (order_id integer,customer_id integer,product_id integer,quantity integer,unit_price integer,order_ts timestamp without time zone)
+  
+[0m13:44:41.649659 [debug] [Thread-1 (]: Using duckdb connection "seed.dbt_demo.bronze_customers"
+[0m13:44:41.649961 [debug] [Thread-3 (]: On seed.dbt_demo.bronze_products: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "seed.dbt_demo.bronze_products"} */
+
+    create table "demo"."analytics_bronze"."bronze_products" (product_id integer,product_name text,product_category text,active_from date)
+  
+[0m13:44:41.650302 [debug] [Thread-1 (]: On seed.dbt_demo.bronze_customers: 
+          COPY "demo"."analytics_bronze"."bronze_customers" FROM '/Users/p/woodfrog/antvia/dbt_demo/seeds/bronze_customers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:44:41.650669 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:44:41.651382 [debug] [Thread-2 (]: Using duckdb connection "seed.dbt_demo.bronze_orders"
+[0m13:44:41.651692 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:44:41.651999 [debug] [Thread-2 (]: On seed.dbt_demo.bronze_orders: 
+          COPY "demo"."analytics_bronze"."bronze_orders" FROM '/Users/p/woodfrog/antvia/dbt_demo/seeds/bronze_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:44:41.652681 [debug] [Thread-3 (]: Using duckdb connection "seed.dbt_demo.bronze_products"
+[0m13:44:41.653024 [debug] [Thread-3 (]: On seed.dbt_demo.bronze_products: 
+          COPY "demo"."analytics_bronze"."bronze_products" FROM '/Users/p/woodfrog/antvia/dbt_demo/seeds/bronze_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m13:44:41.653324 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m13:44:41.655444 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.dbt_demo.bronze_customers"
+[0m13:44:41.655789 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:44:41.656139 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:44:41.656529 [debug] [Thread-2 (]: Writing runtime SQL for node "seed.dbt_demo.bronze_orders"
+[0m13:44:41.656926 [debug] [Thread-3 (]: Writing runtime SQL for node "seed.dbt_demo.bronze_products"
+[0m13:44:41.664147 [debug] [Thread-1 (]: On seed.dbt_demo.bronze_customers: COMMIT
+[0m13:44:41.664935 [debug] [Thread-3 (]: On seed.dbt_demo.bronze_products: COMMIT
+[0m13:44:41.665249 [debug] [Thread-1 (]: Using duckdb connection "seed.dbt_demo.bronze_customers"
+[0m13:44:41.665899 [debug] [Thread-2 (]: On seed.dbt_demo.bronze_orders: COMMIT
+[0m13:44:41.666201 [debug] [Thread-3 (]: Using duckdb connection "seed.dbt_demo.bronze_products"
+[0m13:44:41.666486 [debug] [Thread-1 (]: On seed.dbt_demo.bronze_customers: COMMIT
+[0m13:44:41.666771 [debug] [Thread-2 (]: Using duckdb connection "seed.dbt_demo.bronze_orders"
+[0m13:44:41.667051 [debug] [Thread-3 (]: On seed.dbt_demo.bronze_products: COMMIT
+[0m13:44:41.667356 [debug] [Thread-2 (]: On seed.dbt_demo.bronze_orders: COMMIT
+[0m13:44:41.667898 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:44:41.668741 [debug] [Thread-1 (]: On seed.dbt_demo.bronze_customers: Close
+[0m13:44:41.669038 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:44:41.669343 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:44:41.669999 [debug] [Thread-3 (]: On seed.dbt_demo.bronze_products: Close
+[0m13:44:41.670665 [debug] [Thread-2 (]: On seed.dbt_demo.bronze_orders: Close
+[0m13:44:41.671249 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e3433e0>]}
+[0m13:44:41.671607 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cadc190>]}
+[0m13:44:41.672006 [info ] [Thread-1 (]: 1 of 3 OK loaded seed file analytics_bronze.bronze_customers ................... [[32mINSERT 5[0m in 0.05s]
+[0m13:44:41.672851 [debug] [Thread-1 (]: Finished running node seed.dbt_demo.bronze_customers
+[0m13:44:41.672241 [info ] [Thread-3 (]: 3 of 3 OK loaded seed file analytics_bronze.bronze_products .................... [[32mINSERT 5[0m in 0.05s]
+[0m13:44:41.673482 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ef74f0f6-4844-46b4-b034-5df7054069e1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10af59ed0>]}
+[0m13:44:41.674035 [debug] [Thread-3 (]: Finished running node seed.dbt_demo.bronze_products
+[0m13:44:41.674403 [info ] [Thread-2 (]: 2 of 3 OK loaded seed file analytics_bronze.bronze_orders ...................... [[32mINSERT 6[0m in 0.05s]
+[0m13:44:41.674991 [debug] [Thread-2 (]: Finished running node seed.dbt_demo.bronze_orders
+[0m13:44:41.675663 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:41.675944 [debug] [MainThread]: On master: BEGIN
+[0m13:44:41.676206 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:44:41.679905 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m13:44:41.680215 [debug] [MainThread]: On master: COMMIT
+[0m13:44:41.680479 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:41.680738 [debug] [MainThread]: On master: COMMIT
+[0m13:44:41.681036 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:44:41.681321 [debug] [MainThread]: On master: Close
+[0m13:44:41.681921 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:44:41.682204 [debug] [MainThread]: Connection 'seed.dbt_demo.bronze_customers' was properly closed.
+[0m13:44:41.682478 [debug] [MainThread]: Connection 'seed.dbt_demo.bronze_orders' was properly closed.
+[0m13:44:41.682734 [debug] [MainThread]: Connection 'seed.dbt_demo.bronze_products' was properly closed.
+[0m13:44:41.683004 [info ] [MainThread]: 
+[0m13:44:41.683301 [info ] [MainThread]: Finished running 3 seeds in 0 hours 0 minutes and 0.14 seconds (0.14s).
+[0m13:44:41.684287 [debug] [MainThread]: Command end result
+[0m13:44:41.694559 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/p/woodfrog/antvia/dbt_demo/target/manifest.json
+[0m13:44:41.695374 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/p/woodfrog/antvia/dbt_demo/target/semantic_manifest.json
+[0m13:44:41.697524 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/p/woodfrog/antvia/dbt_demo/target/run_results.json
+[0m13:44:41.697807 [info ] [MainThread]: 
+[0m13:44:41.698136 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:44:41.698451 [info ] [MainThread]: 
+[0m13:44:41.698775 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m13:44:41.716180 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 1.6346351, "process_in_blocks": "0", "process_kernel_time": 0.195265, "process_mem_max_rss": "172490752", "process_out_blocks": "0", "process_user_time": 1.267723}
+[0m13:44:41.716744 [debug] [MainThread]: Command `dbt seed` succeeded at 13:44:41.716554 after 1.64 seconds
+[0m13:44:41.717065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d8bf620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048f3930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e2cd490>]}
+[0m13:44:41.717381 [debug] [MainThread]: Flushing usage events
+[0m13:44:41.721792 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:44:42.371217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f8ecf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094bb4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094bb750>]}
+
+
+============================== 13:44:42.375973 | 1bada6ed-b86b-42b9-ae4d-6d45f5b82758 ==============================
+[0m13:44:42.375973 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:44:42.376429 [debug] [MainThread]: running dbt with arguments {'empty': 'False', 'debug': 'False', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': '/Users/p/woodfrog/antvia/dbt_demo/.dbt', 'partial_parse': 'True', 'target_path': 'None', 'no_print': 'None', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'quiet': 'False', 'warn_error': 'None', 'log_format': 'default', 'cache_selected_only': 'False', 'write_json': 'True', 'printer_width': '80', 'indirect_selection': 'eager', 'version_check': 'True', 'log_path': '/Users/p/woodfrog/antvia/dbt_demo/logs', 'use_colors': 'True'}
+[0m13:44:42.456198 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1088049d0>]}
+[0m13:44:42.482239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073ef350>]}
+[0m13:44:42.483014 [info ] [MainThread]: Registered adapter: duckdb=1.9.0
+[0m13:44:42.516137 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m13:44:42.558075 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:44:42.558418 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m13:44:42.558695 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:44:42.575319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109aa4d50>]}
+[0m13:44:42.607342 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/p/woodfrog/antvia/dbt_demo/target/manifest.json
+[0m13:44:42.608315 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/p/woodfrog/antvia/dbt_demo/target/semantic_manifest.json
+[0m13:44:42.611614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10959fa70>]}
+[0m13:44:42.611960 [info ] [MainThread]: Found 6 models, 3 seeds, 5 data tests, 456 macros
+[0m13:44:42.612304 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c20ad0>]}
+[0m13:44:42.613244 [info ] [MainThread]: 
+[0m13:44:42.613576 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:44:42.613877 [info ] [MainThread]: 
+[0m13:44:42.614268 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:44:42.616145 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo'
+[0m13:44:42.640843 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo'
+[0m13:44:42.658905 [debug] [ThreadPool]: Using duckdb connection "list_demo"
+[0m13:44:42.659264 [debug] [ThreadPool]: Using duckdb connection "list_demo"
+[0m13:44:42.659616 [debug] [ThreadPool]: On list_demo: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"demo"'
+    
+  
+  
+[0m13:44:42.659913 [debug] [ThreadPool]: On list_demo: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"demo"'
+    
+  
+  
+[0m13:44:42.660190 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:42.660456 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:42.665273 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m13:44:42.665588 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m13:44:42.666383 [debug] [ThreadPool]: On list_demo: Close
+[0m13:44:42.667075 [debug] [ThreadPool]: On list_demo: Close
+[0m13:44:42.667913 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo, now create_demo_analytics_bronze)
+[0m13:44:42.668219 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_demo, now create_demo_analytics_silver)
+[0m13:44:42.668549 [debug] [ThreadPool]: Creating schema "database: "demo"
+schema: "analytics_bronze"
+"
+[0m13:44:42.668860 [debug] [ThreadPool]: Creating schema "database: "demo"
+schema: "analytics_silver"
+"
+[0m13:44:42.671200 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:42.672119 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_silver"
+[0m13:44:42.672424 [debug] [ThreadPool]: On create_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "create_demo_analytics_bronze"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='demo'
+        and type='sqlite'
+    
+  
+[0m13:44:42.672700 [debug] [ThreadPool]: On create_demo_analytics_silver: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "create_demo_analytics_silver"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='demo'
+        and type='sqlite'
+    
+  
+[0m13:44:42.672970 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:42.673244 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:42.677043 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:42.677348 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:42.678111 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:42.678414 [debug] [ThreadPool]: On create_demo_analytics_bronze: BEGIN
+[0m13:44:42.679122 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_silver"
+[0m13:44:42.679395 [debug] [ThreadPool]: On create_demo_analytics_silver: BEGIN
+[0m13:44:42.679660 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.679964 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:42.680239 [debug] [ThreadPool]: On create_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "create_demo_analytics_bronze"} */
+
+    
+    
+        create schema if not exists "demo"."analytics_bronze"
+    
+[0m13:44:42.680500 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.680809 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_silver"
+[0m13:44:42.681089 [debug] [ThreadPool]: On create_demo_analytics_silver: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "create_demo_analytics_silver"} */
+
+    
+    
+        create schema if not exists "demo"."analytics_silver"
+    
+[0m13:44:42.681350 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.681905 [debug] [ThreadPool]: On create_demo_analytics_bronze: COMMIT
+[0m13:44:42.682178 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_bronze"
+[0m13:44:42.682441 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.682719 [debug] [ThreadPool]: On create_demo_analytics_bronze: COMMIT
+[0m13:44:42.683255 [debug] [ThreadPool]: On create_demo_analytics_silver: COMMIT
+[0m13:44:42.683560 [debug] [ThreadPool]: Using duckdb connection "create_demo_analytics_silver"
+[0m13:44:42.683837 [debug] [ThreadPool]: On create_demo_analytics_silver: COMMIT
+[0m13:44:42.684126 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.684419 [debug] [ThreadPool]: On create_demo_analytics_bronze: Close
+[0m13:44:42.684776 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.685067 [debug] [ThreadPool]: On create_demo_analytics_silver: Close
+[0m13:44:42.686430 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_demo_analytics_silver, now list_demo_analytics_bronze)
+[0m13:44:42.688443 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_bronze"
+[0m13:44:42.688761 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_demo_analytics_bronze, now list_demo_analytics_silver)
+[0m13:44:42.689044 [debug] [ThreadPool]: On list_demo_analytics_bronze: BEGIN
+[0m13:44:42.689721 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_silver"
+[0m13:44:42.689995 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:42.690262 [debug] [ThreadPool]: On list_demo_analytics_silver: BEGIN
+[0m13:44:42.690567 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:42.693814 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:42.694116 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_bronze"
+[0m13:44:42.694385 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m13:44:42.694665 [debug] [ThreadPool]: On list_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo_analytics_bronze"} */
+select
+      'demo' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics_bronze'
+    and lower(table_catalog) = 'demo'
+  
+[0m13:44:42.694954 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_silver"
+[0m13:44:42.695272 [debug] [ThreadPool]: On list_demo_analytics_silver: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo_analytics_silver"} */
+select
+      'demo' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics_silver'
+    and lower(table_catalog) = 'demo'
+  
+[0m13:44:42.696369 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.696672 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:42.697383 [debug] [ThreadPool]: On list_demo_analytics_silver: ROLLBACK
+[0m13:44:42.698084 [debug] [ThreadPool]: On list_demo_analytics_bronze: ROLLBACK
+[0m13:44:42.698662 [debug] [ThreadPool]: Failed to rollback 'list_demo_analytics_silver'
+[0m13:44:42.699048 [debug] [ThreadPool]: Failed to rollback 'list_demo_analytics_bronze'
+[0m13:44:42.699330 [debug] [ThreadPool]: On list_demo_analytics_silver: Close
+[0m13:44:42.699605 [debug] [ThreadPool]: On list_demo_analytics_bronze: Close
+[0m13:44:42.700654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109d85980>]}
+[0m13:44:42.700986 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:42.701254 [debug] [MainThread]: On master: BEGIN
+[0m13:44:42.701512 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:44:42.705066 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m13:44:42.705366 [debug] [MainThread]: On master: COMMIT
+[0m13:44:42.705642 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:42.705923 [debug] [MainThread]: On master: COMMIT
+[0m13:44:42.706225 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:44:42.706495 [debug] [MainThread]: On master: Close
+[0m13:44:42.708004 [debug] [Thread-3 (]: Began running node model.dbt_demo.brz_products
+[0m13:44:42.708371 [debug] [Thread-2 (]: Began running node model.dbt_demo.brz_orders
+[0m13:44:42.708668 [debug] [Thread-1 (]: Began running node model.dbt_demo.brz_customers
+[0m13:44:42.709020 [info ] [Thread-3 (]: 3 of 6 START sql table model analytics_bronze.brz_products ..................... [RUN]
+[0m13:44:42.709416 [info ] [Thread-2 (]: 2 of 6 START sql table model analytics_bronze.brz_orders ....................... [RUN]
+[0m13:44:42.709795 [info ] [Thread-1 (]: 1 of 6 START sql table model analytics_bronze.brz_customers .................... [RUN]
+[0m13:44:42.710170 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.dbt_demo.brz_products'
+[0m13:44:42.710468 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_demo_analytics_silver, now model.dbt_demo.brz_orders)
+[0m13:44:42.710760 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_demo_analytics_bronze, now model.dbt_demo.brz_customers)
+[0m13:44:42.711049 [debug] [Thread-3 (]: Began compiling node model.dbt_demo.brz_products
+[0m13:44:42.711333 [debug] [Thread-2 (]: Began compiling node model.dbt_demo.brz_orders
+[0m13:44:42.711614 [debug] [Thread-1 (]: Began compiling node model.dbt_demo.brz_customers
+[0m13:44:42.714333 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_demo.brz_products"
+[0m13:44:42.715316 [debug] [Thread-2 (]: Writing injected SQL for node "model.dbt_demo.brz_orders"
+[0m13:44:42.716399 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_demo.brz_customers"
+[0m13:44:42.717116 [debug] [Thread-3 (]: Began executing node model.dbt_demo.brz_products
+[0m13:44:42.717450 [debug] [Thread-2 (]: Began executing node model.dbt_demo.brz_orders
+[0m13:44:42.723122 [debug] [Thread-1 (]: Began executing node model.dbt_demo.brz_customers
+[0m13:44:42.728803 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_demo.brz_products"
+[0m13:44:42.729958 [debug] [Thread-2 (]: Writing runtime sql for node "model.dbt_demo.brz_orders"
+[0m13:44:42.731121 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_demo.brz_customers"
+[0m13:44:42.731678 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.brz_customers"
+[0m13:44:42.732025 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: BEGIN
+[0m13:44:42.732335 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:42.732686 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.brz_products"
+[0m13:44:42.733025 [debug] [Thread-2 (]: Using duckdb connection "model.dbt_demo.brz_orders"
+[0m13:44:42.733350 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: BEGIN
+[0m13:44:42.733652 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: BEGIN
+[0m13:44:42.733946 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:44:42.734264 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:44:42.736252 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:44:42.736603 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m13:44:42.736927 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.brz_customers"
+[0m13:44:42.737246 [debug] [Thread-2 (]: SQL status: OK in 0.003 seconds
+[0m13:44:42.737560 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.brz_products"
+[0m13:44:42.737892 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_customers"} */
+
+  
+    
+    
+
+    create  table
+      "demo"."analytics_bronze"."brz_customers__dbt_tmp"
+  
+    as (
+      
+
+select
+  cast(customer_id as integer) as customer_id,
+  trim(customer_name) as customer_name,
+  trim(customer_tier) as customer_tier
+from "demo"."analytics_bronze"."bronze_customers"
+    );
+  
+  
+[0m13:44:42.738213 [debug] [Thread-2 (]: Using duckdb connection "model.dbt_demo.brz_orders"
+[0m13:44:42.738518 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_products"} */
+
+  
+    
+    
+
+    create  table
+      "demo"."analytics_bronze"."brz_products__dbt_tmp"
+  
+    as (
+      
+
+select
+  cast(product_id as integer) as product_id,
+  trim(product_name) as product_name,
+  trim(product_category) as product_category,
+  cast(active_from as date) as active_from
+from "demo"."analytics_bronze"."bronze_products"
+    );
+  
+  
+[0m13:44:42.738869 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_orders"} */
+
+  
+    
+    
+
+    create  table
+      "demo"."analytics_bronze"."brz_orders__dbt_tmp"
+  
+    as (
+      
+
+select
+  cast(order_id as integer) as order_id,
+  cast(customer_id as integer) as customer_id,
+  cast(product_id as integer) as product_id,
+  cast(quantity as integer) as quantity,
+  cast(unit_price as decimal(12,2)) as unit_price,
+  cast(order_ts as timestamp) as order_ts
+from "demo"."analytics_bronze"."bronze_orders"
+    );
+  
+  
+[0m13:44:42.739246 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.739599 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.741977 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.brz_customers"
+[0m13:44:42.743175 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.brz_products"
+[0m13:44:42.743480 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:44:42.743770 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_customers"} */
+alter table "demo"."analytics_bronze"."brz_customers__dbt_tmp" rename to "brz_customers"
+[0m13:44:42.744061 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_products"} */
+alter table "demo"."analytics_bronze"."brz_products__dbt_tmp" rename to "brz_products"
+[0m13:44:42.745316 [debug] [Thread-2 (]: Using duckdb connection "model.dbt_demo.brz_orders"
+[0m13:44:42.745667 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_orders"} */
+alter table "demo"."analytics_bronze"."brz_orders__dbt_tmp" rename to "brz_orders"
+[0m13:44:42.746081 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.752273 [debug] [Thread-3 (]: SQL status: OK in 0.007 seconds
+[0m13:44:42.754585 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: COMMIT
+[0m13:44:42.755415 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: COMMIT
+[0m13:44:42.755722 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.brz_products"
+[0m13:44:42.756004 [debug] [Thread-2 (]: SQL status: OK in 0.010 seconds
+[0m13:44:42.756290 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.brz_customers"
+[0m13:44:42.756570 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: COMMIT
+[0m13:44:42.757304 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: COMMIT
+[0m13:44:42.757599 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: COMMIT
+[0m13:44:42.757935 [debug] [Thread-2 (]: Using duckdb connection "model.dbt_demo.brz_orders"
+[0m13:44:42.758262 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.758603 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: COMMIT
+[0m13:44:42.758916 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.760729 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.brz_products"
+[0m13:44:42.761699 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.brz_customers"
+[0m13:44:42.761996 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.762311 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_products"} */
+drop table if exists "demo"."analytics_bronze"."brz_products__dbt_backup" cascade
+[0m13:44:42.762628 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_customers"} */
+drop table if exists "demo"."analytics_bronze"."brz_customers__dbt_backup" cascade
+[0m13:44:42.763503 [debug] [Thread-2 (]: Using duckdb connection "model.dbt_demo.brz_orders"
+[0m13:44:42.763890 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.brz_orders"} */
+drop table if exists "demo"."analytics_bronze"."brz_orders__dbt_backup" cascade
+[0m13:44:42.764293 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.765413 [debug] [Thread-1 (]: On model.dbt_demo.brz_customers: Close
+[0m13:44:42.765715 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m13:44:42.766052 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m13:44:42.767021 [debug] [Thread-3 (]: On model.dbt_demo.brz_products: Close
+[0m13:44:42.767914 [debug] [Thread-2 (]: On model.dbt_demo.brz_orders: Close
+[0m13:44:42.768354 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109312ed0>]}
+[0m13:44:42.768681 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109bd7e30>]}
+[0m13:44:42.769141 [info ] [Thread-1 (]: 1 of 6 OK created sql table model analytics_bronze.brz_customers ............... [[32mOK[0m in 0.06s]
+[0m13:44:42.769602 [info ] [Thread-3 (]: 3 of 6 OK created sql table model analytics_bronze.brz_products ................ [[32mOK[0m in 0.06s]
+[0m13:44:42.770244 [debug] [Thread-1 (]: Finished running node model.dbt_demo.brz_customers
+[0m13:44:42.770623 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10973c370>]}
+[0m13:44:42.771185 [debug] [Thread-3 (]: Finished running node model.dbt_demo.brz_products
+[0m13:44:42.771660 [info ] [Thread-2 (]: 2 of 6 OK created sql table model analytics_bronze.brz_orders .................. [[32mOK[0m in 0.06s]
+[0m13:44:42.772274 [debug] [Thread-2 (]: Finished running node model.dbt_demo.brz_orders
+[0m13:44:42.772689 [debug] [Thread-4 (]: Began running node model.dbt_demo.silver_order_enriched
+[0m13:44:42.773035 [debug] [Thread-1 (]: Began running node model.dbt_demo.silver_orders_simple
+[0m13:44:42.773437 [info ] [Thread-4 (]: 4 of 6 START sql table model analytics_silver.silver_order_enriched ............ [RUN]
+[0m13:44:42.773862 [info ] [Thread-1 (]: 5 of 6 START sql table model analytics_silver.silver_orders_simple ............. [RUN]
+[0m13:44:42.774294 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.dbt_demo.silver_order_enriched'
+[0m13:44:42.774621 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_demo.brz_customers, now model.dbt_demo.silver_orders_simple)
+[0m13:44:42.774919 [debug] [Thread-4 (]: Began compiling node model.dbt_demo.silver_order_enriched
+[0m13:44:42.775224 [debug] [Thread-1 (]: Began compiling node model.dbt_demo.silver_orders_simple
+[0m13:44:42.776639 [debug] [Thread-4 (]: Writing injected SQL for node "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.777567 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.778035 [debug] [Thread-1 (]: Began executing node model.dbt_demo.silver_orders_simple
+[0m13:44:42.778385 [debug] [Thread-4 (]: Began executing node model.dbt_demo.silver_order_enriched
+[0m13:44:42.779666 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.780702 [debug] [Thread-4 (]: Writing runtime sql for node "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.781185 [debug] [Thread-4 (]: Using duckdb connection "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.781488 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: BEGIN
+[0m13:44:42.781783 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.782084 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:44:42.782399 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: BEGIN
+[0m13:44:42.782726 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:42.786319 [debug] [Thread-4 (]: SQL status: OK in 0.004 seconds
+[0m13:44:42.786668 [debug] [Thread-4 (]: Using duckdb connection "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.786957 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m13:44:42.787258 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_order_enriched"} */
+
+  
+    
+    
+
+    create  table
+      "demo"."analytics_silver"."silver_order_enriched__dbt_tmp"
+  
+    as (
+      
+
+select
+  o.order_id,
+  o.customer_id,
+  c.customer_name,
+  c.customer_tier,
+  o.product_id,
+  p.product_name,
+  p.product_category,
+  o.quantity,
+  o.unit_price,
+  o.quantity * o.unit_price as line_total,
+  cast(o.order_ts as date) as order_date
+from "demo"."analytics_bronze"."brz_orders" o
+left join "demo"."analytics_bronze"."brz_customers" c
+  on o.customer_id = c.customer_id
+left join "demo"."analytics_bronze"."brz_products" p
+  on o.product_id = p.product_id
+    );
+  
+  
+[0m13:44:42.787556 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.787901 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_orders_simple"} */
+
+  
+    
+    
+
+    create  table
+      "demo"."analytics_silver"."silver_orders_simple__dbt_tmp"
+  
+    as (
+      
+
+select
+  order_id,
+  customer_id,
+  product_id,
+  quantity,
+  unit_price,
+  quantity * unit_price as line_total,
+  cast(order_ts as date) as order_date
+from "demo"."analytics_bronze"."brz_orders"
+where quantity > 0
+    );
+  
+  
+[0m13:44:42.788573 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.790033 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.790332 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_orders_simple"} */
+alter table "demo"."analytics_silver"."silver_orders_simple__dbt_tmp" rename to "silver_orders_simple"
+[0m13:44:42.790618 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m13:44:42.793643 [debug] [Thread-4 (]: Using duckdb connection "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.793945 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_order_enriched"} */
+alter table "demo"."analytics_silver"."silver_order_enriched__dbt_tmp" rename to "silver_order_enriched"
+[0m13:44:42.794234 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m13:44:42.795018 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: COMMIT
+[0m13:44:42.795310 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.795594 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.795884 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: COMMIT
+[0m13:44:42.796604 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: COMMIT
+[0m13:44:42.796932 [debug] [Thread-4 (]: Using duckdb connection "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.797253 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: COMMIT
+[0m13:44:42.797552 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.798493 [debug] [Thread-1 (]: Using duckdb connection "model.dbt_demo.silver_orders_simple"
+[0m13:44:42.798791 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_orders_simple"} */
+drop table if exists "demo"."analytics_silver"."silver_orders_simple__dbt_backup" cascade
+[0m13:44:42.799074 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.800099 [debug] [Thread-4 (]: Using duckdb connection "model.dbt_demo.silver_order_enriched"
+[0m13:44:42.800388 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_order_enriched"} */
+drop table if exists "demo"."analytics_silver"."silver_order_enriched__dbt_backup" cascade
+[0m13:44:42.800671 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.801402 [debug] [Thread-1 (]: On model.dbt_demo.silver_orders_simple: Close
+[0m13:44:42.801699 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.802047 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109efa750>]}
+[0m13:44:42.802733 [debug] [Thread-4 (]: On model.dbt_demo.silver_order_enriched: Close
+[0m13:44:42.803124 [info ] [Thread-1 (]: 5 of 6 OK created sql table model analytics_silver.silver_orders_simple ........ [[32mOK[0m in 0.03s]
+[0m13:44:42.803689 [debug] [Thread-1 (]: Finished running node model.dbt_demo.silver_orders_simple
+[0m13:44:42.804992 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109ff31c0>]}
+[0m13:44:42.805403 [info ] [Thread-4 (]: 4 of 6 OK created sql table model analytics_silver.silver_order_enriched ....... [[32mOK[0m in 0.03s]
+[0m13:44:42.805948 [debug] [Thread-4 (]: Finished running node model.dbt_demo.silver_order_enriched
+[0m13:44:42.806352 [debug] [Thread-3 (]: Began running node model.dbt_demo.silver_order_metrics
+[0m13:44:42.806719 [info ] [Thread-3 (]: 6 of 6 START sql table model analytics_silver.silver_order_metrics ............. [RUN]
+[0m13:44:42.807082 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.dbt_demo.brz_products, now model.dbt_demo.silver_order_metrics)
+[0m13:44:42.807403 [debug] [Thread-3 (]: Began compiling node model.dbt_demo.silver_order_metrics
+[0m13:44:42.808477 [debug] [Thread-3 (]: Writing injected SQL for node "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.808883 [debug] [Thread-3 (]: Began executing node model.dbt_demo.silver_order_metrics
+[0m13:44:42.809936 [debug] [Thread-3 (]: Writing runtime sql for node "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.810316 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.810598 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: BEGIN
+[0m13:44:42.810890 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m13:44:42.814798 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m13:44:42.815126 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.815407 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_order_metrics"} */
+
+  
+    
+    
+
+    create  table
+      "demo"."analytics_silver"."silver_order_metrics__dbt_tmp"
+  
+    as (
+      
+
+select
+  concat(customer_tier, '_', product_category) as metric_key,
+  customer_tier,
+  product_category,
+  count(*) as order_rows,
+  sum(line_total) as gross_sales
+from "demo"."analytics_silver"."silver_order_enriched"
+group by 1,2,3
+    );
+  
+  
+[0m13:44:42.816437 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m13:44:42.817830 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.818131 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_order_metrics"} */
+alter table "demo"."analytics_silver"."silver_order_metrics__dbt_tmp" rename to "silver_order_metrics"
+[0m13:44:42.818509 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.819247 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: COMMIT
+[0m13:44:42.819537 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.819838 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: COMMIT
+[0m13:44:42.820321 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.821217 [debug] [Thread-3 (]: Using duckdb connection "model.dbt_demo.silver_order_metrics"
+[0m13:44:42.821515 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "model.dbt_demo.silver_order_metrics"} */
+drop table if exists "demo"."analytics_silver"."silver_order_metrics__dbt_backup" cascade
+[0m13:44:42.821861 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:44:42.822619 [debug] [Thread-3 (]: On model.dbt_demo.silver_order_metrics: Close
+[0m13:44:42.824070 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1bada6ed-b86b-42b9-ae4d-6d45f5b82758', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109bcbdd0>]}
+[0m13:44:42.824519 [info ] [Thread-3 (]: 6 of 6 OK created sql table model analytics_silver.silver_order_metrics ........ [[32mOK[0m in 0.02s]
+[0m13:44:42.825087 [debug] [Thread-3 (]: Finished running node model.dbt_demo.silver_order_metrics
+[0m13:44:42.825743 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:42.826048 [debug] [MainThread]: On master: BEGIN
+[0m13:44:42.826309 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:44:42.830116 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m13:44:42.830463 [debug] [MainThread]: On master: COMMIT
+[0m13:44:42.830753 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:42.831036 [debug] [MainThread]: On master: COMMIT
+[0m13:44:42.831372 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:44:42.831711 [debug] [MainThread]: On master: Close
+[0m13:44:42.832321 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:44:42.832628 [debug] [MainThread]: Connection 'model.dbt_demo.silver_orders_simple' was properly closed.
+[0m13:44:42.832885 [debug] [MainThread]: Connection 'model.dbt_demo.brz_orders' was properly closed.
+[0m13:44:42.833133 [debug] [MainThread]: Connection 'model.dbt_demo.silver_order_metrics' was properly closed.
+[0m13:44:42.833382 [debug] [MainThread]: Connection 'model.dbt_demo.silver_order_enriched' was properly closed.
+[0m13:44:42.833676 [info ] [MainThread]: 
+[0m13:44:42.833978 [info ] [MainThread]: Finished running 6 table models in 0 hours 0 minutes and 0.22 seconds (0.22s).
+[0m13:44:42.835471 [debug] [MainThread]: Command end result
+[0m13:44:42.845584 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/p/woodfrog/antvia/dbt_demo/target/manifest.json
+[0m13:44:42.846394 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/p/woodfrog/antvia/dbt_demo/target/semantic_manifest.json
+[0m13:44:42.848669 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/p/woodfrog/antvia/dbt_demo/target/run_results.json
+[0m13:44:42.848958 [info ] [MainThread]: 
+[0m13:44:42.849280 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:44:42.849590 [info ] [MainThread]: 
+[0m13:44:42.849905 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=6
+[0m13:44:42.851186 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.5096577, "process_in_blocks": "0", "process_kernel_time": 0.16311, "process_mem_max_rss": "164970496", "process_out_blocks": "0", "process_user_time": 0.873464}
+[0m13:44:42.851674 [debug] [MainThread]: Command `dbt run` succeeded at 13:44:42.851492 after 0.51 seconds
+[0m13:44:42.851971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109542e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10908e450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f200b0>]}
+[0m13:44:42.852289 [debug] [MainThread]: Flushing usage events
+[0m13:44:42.856296 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:44:43.507503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10cb6ecf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e09b4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e09b750>]}
+
+
+============================== 13:44:43.512070 | 0032c4ce-c6d3-46ac-b352-c5fac11c3091 ==============================
+[0m13:44:43.512070 [info ] [MainThread]: Running with dbt=1.11.8
+[0m13:44:43.512519 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'printer_width': '80', 'static_parser': 'True', 'indirect_selection': 'eager', 'empty': 'None', 'target_path': 'None', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'fail_fast': 'False', 'version_check': 'True', 'debug': 'False', 'log_format': 'default', 'log_path': '/Users/p/woodfrog/antvia/dbt_demo/logs', 'cache_selected_only': 'False', 'profiles_dir': '/Users/p/woodfrog/antvia/dbt_demo/.dbt', 'use_colors': 'True', 'invocation_command': 'dbt test', 'warn_error': 'None', 'partial_parse': 'True'}
+[0m13:44:43.591731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0032c4ce-c6d3-46ac-b352-c5fac11c3091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10d3e49d0>]}
+[0m13:44:43.617694 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0032c4ce-c6d3-46ac-b352-c5fac11c3091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfcf350>]}
+[0m13:44:43.618481 [info ] [MainThread]: Registered adapter: duckdb=1.9.0
+[0m13:44:43.652541 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m13:44:43.694464 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:44:43.694785 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m13:44:43.695055 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:44:43.711669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0032c4ce-c6d3-46ac-b352-c5fac11c3091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e684d50>]}
+[0m13:44:43.743441 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/p/woodfrog/antvia/dbt_demo/target/manifest.json
+[0m13:44:43.744329 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/p/woodfrog/antvia/dbt_demo/target/semantic_manifest.json
+[0m13:44:43.774153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0032c4ce-c6d3-46ac-b352-c5fac11c3091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e87a6c0>]}
+[0m13:44:43.774569 [info ] [MainThread]: Found 6 models, 3 seeds, 5 data tests, 456 macros
+[0m13:44:43.774907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0032c4ce-c6d3-46ac-b352-c5fac11c3091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e29f3f0>]}
+[0m13:44:43.775865 [info ] [MainThread]: 
+[0m13:44:43.776219 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m13:44:43.776527 [info ] [MainThread]: 
+[0m13:44:43.776910 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m13:44:43.778822 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo_analytics_bronze'
+[0m13:44:43.779226 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_demo_analytics_silver'
+[0m13:44:43.796654 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_bronze"
+[0m13:44:43.796988 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_silver"
+[0m13:44:43.797294 [debug] [ThreadPool]: On list_demo_analytics_bronze: BEGIN
+[0m13:44:43.797602 [debug] [ThreadPool]: On list_demo_analytics_silver: BEGIN
+[0m13:44:43.797869 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:43.798132 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:43.802736 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m13:44:43.803083 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_bronze"
+[0m13:44:43.803378 [debug] [ThreadPool]: SQL status: OK in 0.005 seconds
+[0m13:44:43.803669 [debug] [ThreadPool]: On list_demo_analytics_bronze: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo_analytics_bronze"} */
+select
+      'demo' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics_bronze'
+    and lower(table_catalog) = 'demo'
+  
+[0m13:44:43.803947 [debug] [ThreadPool]: Using duckdb connection "list_demo_analytics_silver"
+[0m13:44:43.804279 [debug] [ThreadPool]: On list_demo_analytics_silver: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "connection_name": "list_demo_analytics_silver"} */
+select
+      'demo' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics_silver'
+    and lower(table_catalog) = 'demo'
+  
+[0m13:44:43.805609 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m13:44:43.805902 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m13:44:43.806758 [debug] [ThreadPool]: On list_demo_analytics_silver: ROLLBACK
+[0m13:44:43.807504 [debug] [ThreadPool]: On list_demo_analytics_bronze: ROLLBACK
+[0m13:44:43.808054 [debug] [ThreadPool]: Failed to rollback 'list_demo_analytics_silver'
+[0m13:44:43.808441 [debug] [ThreadPool]: Failed to rollback 'list_demo_analytics_bronze'
+[0m13:44:43.808719 [debug] [ThreadPool]: On list_demo_analytics_silver: Close
+[0m13:44:43.808997 [debug] [ThreadPool]: On list_demo_analytics_bronze: Close
+[0m13:44:43.810300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0032c4ce-c6d3-46ac-b352-c5fac11c3091', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ea28d50>]}
+[0m13:44:43.810644 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:43.810915 [debug] [MainThread]: On master: BEGIN
+[0m13:44:43.811175 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:44:43.815039 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m13:44:43.815330 [debug] [MainThread]: On master: COMMIT
+[0m13:44:43.815596 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:43.815860 [debug] [MainThread]: On master: COMMIT
+[0m13:44:43.816167 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:44:43.816440 [debug] [MainThread]: On master: Close
+[0m13:44:43.817619 [debug] [Thread-2 (]: Began running node test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921
+[0m13:44:43.817948 [debug] [Thread-3 (]: Began running node test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7
+[0m13:44:43.818242 [debug] [Thread-1 (]: Began running node test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a
+[0m13:44:43.818545 [info ] [Thread-2 (]: 2 of 5 START test not_null_silver_order_enriched_order_id ...................... [RUN]
+[0m13:44:43.818886 [debug] [Thread-4 (]: Began running node test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120
+[0m13:44:43.819218 [info ] [Thread-3 (]: 3 of 5 START test not_null_silver_order_metrics_metric_key ..................... [RUN]
+[0m13:44:43.819562 [info ] [Thread-1 (]: 1 of 5 START test not_null_silver_order_enriched_customer_name ................. [RUN]
+[0m13:44:43.819913 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_demo_analytics_silver, now test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921)
+[0m13:44:43.820210 [info ] [Thread-4 (]: 4 of 5 START test unique_silver_order_enriched_order_id ........................ [RUN]
+[0m13:44:43.820565 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7'
+[0m13:44:43.820868 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_demo_analytics_bronze, now test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a)
+[0m13:44:43.821154 [debug] [Thread-2 (]: Began compiling node test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921
+[0m13:44:43.821466 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120'
+[0m13:44:43.821748 [debug] [Thread-3 (]: Began compiling node test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7
+[0m13:44:43.822034 [debug] [Thread-1 (]: Began compiling node test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a
+[0m13:44:43.827954 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921"
+[0m13:44:43.828287 [debug] [Thread-4 (]: Began compiling node test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120
+[0m13:44:43.829691 [debug] [Thread-3 (]: Writing injected SQL for node "test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7"
+[0m13:44:43.830966 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a"
+[0m13:44:43.833166 [debug] [Thread-4 (]: Writing injected SQL for node "test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120"
+[0m13:44:43.833635 [debug] [Thread-1 (]: Began executing node test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a
+[0m13:44:43.833963 [debug] [Thread-2 (]: Began executing node test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921
+[0m13:44:43.834297 [debug] [Thread-3 (]: Began executing node test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7
+[0m13:44:43.840373 [debug] [Thread-1 (]: Writing runtime sql for node "test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a"
+[0m13:44:43.840722 [debug] [Thread-4 (]: Began executing node test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120
+[0m13:44:43.841743 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921"
+[0m13:44:43.842624 [debug] [Thread-3 (]: Writing runtime sql for node "test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7"
+[0m13:44:43.843673 [debug] [Thread-4 (]: Writing runtime sql for node "test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120"
+[0m13:44:43.844149 [debug] [Thread-3 (]: Using duckdb connection "test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7"
+[0m13:44:43.844507 [debug] [Thread-2 (]: Using duckdb connection "test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921"
+[0m13:44:43.844851 [debug] [Thread-1 (]: Using duckdb connection "test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a"
+[0m13:44:43.845154 [debug] [Thread-3 (]: On test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7: BEGIN
+[0m13:44:43.845488 [debug] [Thread-4 (]: Using duckdb connection "test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120"
+[0m13:44:43.845788 [debug] [Thread-2 (]: On test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921: BEGIN
+[0m13:44:43.846070 [debug] [Thread-1 (]: On test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a: BEGIN
+[0m13:44:43.846349 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m13:44:43.846655 [debug] [Thread-4 (]: On test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120: BEGIN
+[0m13:44:43.846961 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:44:43.847245 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:43.847567 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m13:44:43.851423 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:44:43.851823 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m13:44:43.852164 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m13:44:43.852490 [debug] [Thread-2 (]: Using duckdb connection "test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921"
+[0m13:44:43.852814 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m13:44:43.853122 [debug] [Thread-3 (]: Using duckdb connection "test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7"
+[0m13:44:43.853430 [debug] [Thread-4 (]: Using duckdb connection "test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120"
+[0m13:44:43.853762 [debug] [Thread-2 (]: On test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select order_id
+from "demo"."analytics_silver"."silver_order_enriched"
+where order_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:44:43.854095 [debug] [Thread-1 (]: Using duckdb connection "test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a"
+[0m13:44:43.854425 [debug] [Thread-3 (]: On test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select metric_key
+from "demo"."analytics_silver"."silver_order_metrics"
+where metric_key is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:44:43.854750 [debug] [Thread-4 (]: On test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    order_id as unique_field,
+    count(*) as n_records
+
+from "demo"."analytics_silver"."silver_order_enriched"
+where order_id is not null
+group by order_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:44:43.855124 [debug] [Thread-1 (]: On test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_name
+from "demo"."analytics_silver"."silver_order_enriched"
+where customer_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:44:43.855541 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m13:44:43.855926 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m13:44:43.856324 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m13:44:43.856672 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m13:44:43.858468 [debug] [Thread-2 (]: On test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921: ROLLBACK
+[0m13:44:43.859262 [debug] [Thread-4 (]: On test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120: ROLLBACK
+[0m13:44:43.860049 [debug] [Thread-3 (]: On test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7: ROLLBACK
+[0m13:44:43.860738 [debug] [Thread-1 (]: On test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a: ROLLBACK
+[0m13:44:43.861119 [debug] [Thread-2 (]: Failed to rollback 'test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921'
+[0m13:44:43.861459 [debug] [Thread-4 (]: Failed to rollback 'test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120'
+[0m13:44:43.861795 [debug] [Thread-3 (]: Failed to rollback 'test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7'
+[0m13:44:43.862127 [debug] [Thread-1 (]: Failed to rollback 'test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a'
+[0m13:44:43.862411 [debug] [Thread-2 (]: On test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921: Close
+[0m13:44:43.862687 [debug] [Thread-4 (]: On test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120: Close
+[0m13:44:43.862967 [debug] [Thread-3 (]: On test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7: Close
+[0m13:44:43.863261 [debug] [Thread-1 (]: On test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a: Close
+[0m13:44:43.863627 [info ] [Thread-2 (]: 2 of 5 PASS not_null_silver_order_enriched_order_id ............................ [[32mPASS[0m in 0.04s]
+[0m13:44:43.864095 [error] [Thread-4 (]: 4 of 5 FAIL 2 unique_silver_order_enriched_order_id ............................ [[31mFAIL 2[0m in 0.04s]
+[0m13:44:43.864480 [info ] [Thread-1 (]: 1 of 5 PASS not_null_silver_order_enriched_customer_name ....................... [[32mPASS[0m in 0.04s]
+[0m13:44:43.865036 [debug] [Thread-2 (]: Finished running node test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921
+[0m13:44:43.865404 [info ] [Thread-3 (]: 3 of 5 PASS not_null_silver_order_metrics_metric_key ........................... [[32mPASS[0m in 0.04s]
+[0m13:44:43.865940 [debug] [Thread-4 (]: Finished running node test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120
+[0m13:44:43.866415 [debug] [Thread-1 (]: Finished running node test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a
+[0m13:44:43.866729 [debug] [Thread-2 (]: Began running node test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef
+[0m13:44:43.867241 [debug] [Thread-3 (]: Finished running node test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7
+[0m13:44:43.867602 [info ] [Thread-2 (]: 5 of 5 START test unique_silver_order_metrics_metric_key ....................... [RUN]
+[0m13:44:43.867987 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.dbt_demo.not_null_silver_order_enriched_order_id.3bb1d0c921, now test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef)
+[0m13:44:43.868281 [debug] [Thread-2 (]: Began compiling node test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef
+[0m13:44:43.869661 [debug] [Thread-2 (]: Writing injected SQL for node "test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef"
+[0m13:44:43.870078 [debug] [Thread-2 (]: Began executing node test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef
+[0m13:44:43.870896 [debug] [Thread-2 (]: Writing runtime sql for node "test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef"
+[0m13:44:43.871282 [debug] [Thread-2 (]: Using duckdb connection "test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef"
+[0m13:44:43.871559 [debug] [Thread-2 (]: On test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef: BEGIN
+[0m13:44:43.871828 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m13:44:43.875690 [debug] [Thread-2 (]: SQL status: OK in 0.004 seconds
+[0m13:44:43.876021 [debug] [Thread-2 (]: Using duckdb connection "test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef"
+[0m13:44:43.876306 [debug] [Thread-2 (]: On test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "dbt_demo", "target_name": "dev", "node_id": "test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    metric_key as unique_field,
+    count(*) as n_records
+
+from "demo"."analytics_silver"."silver_order_metrics"
+where metric_key is not null
+group by metric_key
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m13:44:43.877119 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m13:44:43.878018 [debug] [Thread-2 (]: On test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef: ROLLBACK
+[0m13:44:43.878403 [debug] [Thread-2 (]: Failed to rollback 'test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef'
+[0m13:44:43.878692 [debug] [Thread-2 (]: On test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef: Close
+[0m13:44:43.879396 [info ] [Thread-2 (]: 5 of 5 PASS unique_silver_order_metrics_metric_key ............................. [[32mPASS[0m in 0.01s]
+[0m13:44:43.879947 [debug] [Thread-2 (]: Finished running node test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef
+[0m13:44:43.880581 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:43.880857 [debug] [MainThread]: On master: BEGIN
+[0m13:44:43.881114 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:44:43.884786 [debug] [MainThread]: SQL status: OK in 0.004 seconds
+[0m13:44:43.885070 [debug] [MainThread]: On master: COMMIT
+[0m13:44:43.885335 [debug] [MainThread]: Using duckdb connection "master"
+[0m13:44:43.885595 [debug] [MainThread]: On master: COMMIT
+[0m13:44:43.885920 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m13:44:43.886206 [debug] [MainThread]: On master: Close
+[0m13:44:43.886799 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:44:43.887067 [debug] [MainThread]: Connection 'test.dbt_demo.not_null_silver_order_enriched_customer_name.ca35004f5a' was properly closed.
+[0m13:44:43.887319 [debug] [MainThread]: Connection 'test.dbt_demo.unique_silver_order_metrics_metric_key.3f578794ef' was properly closed.
+[0m13:44:43.887567 [debug] [MainThread]: Connection 'test.dbt_demo.not_null_silver_order_metrics_metric_key.f088775cf7' was properly closed.
+[0m13:44:43.887816 [debug] [MainThread]: Connection 'test.dbt_demo.unique_silver_order_enriched_order_id.cb25fe1120' was properly closed.
+[0m13:44:43.888101 [info ] [MainThread]: 
+[0m13:44:43.888425 [info ] [MainThread]: Finished running 5 data tests in 0 hours 0 minutes and 0.11 seconds (0.11s).
+[0m13:44:43.889761 [debug] [MainThread]: Command end result
+[0m13:44:43.901490 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/p/woodfrog/antvia/dbt_demo/target/manifest.json
+[0m13:44:43.902287 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/p/woodfrog/antvia/dbt_demo/target/semantic_manifest.json
+[0m13:44:43.904751 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/p/woodfrog/antvia/dbt_demo/target/run_results.json
+[0m13:44:43.905043 [info ] [MainThread]: 
+[0m13:44:43.905353 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:44:43.905654 [info ] [MainThread]: 
+[0m13:44:43.905985 [error] [MainThread]: [31mFailure in test unique_silver_order_enriched_order_id (models/schema.yml)[0m
+[0m13:44:43.906311 [error] [MainThread]:   Got 2 results, configured to fail if != 0
+[0m13:44:43.906605 [info ] [MainThread]: 
+[0m13:44:43.906924 [info ] [MainThread]:   compiled code at target/compiled/dbt_demo/models/schema.yml/unique_silver_order_enriched_order_id.sql
+[0m13:44:43.907222 [info ] [MainThread]: 
+[0m13:44:43.907534 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=5
+[0m13:44:43.908806 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.43147737, "process_in_blocks": "0", "process_kernel_time": 0.144371, "process_mem_max_rss": "157663232", "process_out_blocks": "0", "process_user_time": 0.841937}
+[0m13:44:43.909270 [debug] [MainThread]: Command `dbt test` failed at 13:44:43.909101 after 0.43 seconds
+[0m13:44:43.909577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e1a81d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e8824c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e881de0>]}
+[0m13:44:43.909869 [debug] [MainThread]: Flushing usage events
+[0m13:44:43.913835 [debug] [MainThread]: An error was encountered while trying to flush usage events

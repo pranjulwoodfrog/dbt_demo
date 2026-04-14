@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: silver_order_enriched
+    description: "Silver-1 multi-join model over bronze orders, customers, and products."
+    columns:
+      - name: order_id
+        description: "Business order identifier; expected to be unique at silver-1 grain."
+        tests:
+          - not_null
+          - unique
+      - name: customer_name
+        tests:
+          - not_null
+
+  - name: silver_order_metrics
+    description: "Silver-2 aggregated metrics from silver_order_enriched."
+    columns:
+      - name: metric_key
+        tests:
+          - not_null
+          - unique

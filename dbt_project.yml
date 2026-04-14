@@ -1,0 +1,25 @@
+name: dbt_demo
+version: 1.0.0
+config-version: 2
+
+profile: dbt_demo
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "logs"]
+
+models:
+  dbt_demo:
+    +materialized: table
+    bronze:
+      +schema: bronze
+    silver:
+      +schema: silver
+
+seeds:
+  dbt_demo:
+    +schema: bronze
+    +quote_columns: false

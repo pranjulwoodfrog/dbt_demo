@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "demo"."analytics_bronze"."bronze_orders" (order_id integer,customer_id integer,product_id integer,quantity integer,unit_price integer,order_ts timestamp without time zone)
+  ;
+    -- dbt seed --
+    
+          COPY "demo"."analytics_bronze"."bronze_orders" FROM '/Users/p/woodfrog/antvia/dbt_demo/seeds/bronze_orders.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

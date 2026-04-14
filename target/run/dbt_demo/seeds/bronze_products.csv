@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "demo"."analytics_bronze"."bronze_products" (product_id integer,product_name text,product_category text,active_from date)
+  ;
+    -- dbt seed --
+    
+          COPY "demo"."analytics_bronze"."bronze_products" FROM '/Users/p/woodfrog/antvia/dbt_demo/seeds/bronze_products.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  
